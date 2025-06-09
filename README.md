@@ -1,27 +1,41 @@
-# RaceStrategyWEB
+RaceStrategyWEB
+Aplicación web desarrollada con Angular 16 y Angular Material para una interfaz moderna y funcional. Se conecta a una API externa que debe configurarse en el entorno.
+Requisitos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Node.js (versión compatible con Angular 16)
+Angular CLI (v16.2.16): npm install -g @angular/cli@16.2.16
 
-## Development server
+Configuración
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Clona el repositorio e instala dependencias:
+git clone <https://github.com/gomezcamilo9701/RaceStrategyManagerWEB.git>
+cd RaceStrategyWEB
+npm install
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Configura la URL de la API en src/environments/environment.ts:
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:elpuertodeustedes.com'
+};
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Desarrollo
+Inicia el servidor de desarrollo:
+ng serve
 
-## Running unit tests
+Accede en http://localhost:4200/. Los cambios se reflejan automáticamente.
+Compilación
+Compila el proyecto para producción:
+ng build
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Los archivos se generan en dist/.
+Pruebas
 
-## Running end-to-end tests
+Unitarias: ng test (con Karma)
+End-to-end: ng e2e (requiere paquete adicional, ej. Cypress)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular Material
+La aplicación usa Angular Material para componentes de UI. Importa los módulos necesarios en app.module.ts o módulos específicos.
+Ayuda
+Consulta la documentación de Angular CLI o ejecuta ng help para más detalles.
