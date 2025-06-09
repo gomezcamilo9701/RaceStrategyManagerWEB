@@ -1,0 +1,27 @@
+<div class="container">
+    <button mat-button class="btn" (click)="goBack()">Volver</button>
+    <h2>Estrategias para {{ pilotName }}</h2>
+    <p>Vueltas: {{ maxLaps }}</p>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+    <p *ngIf="loading">Cargando...</p>
+
+    <mat-card *ngFor="let strategy of strategies" class="card" [ngClass]="{'best': strategy.isMostEfficient}">
+        <mat-card-header>
+            <mat-card-title>Estrategia {{ strategies.indexOf(strategy) + 1 }}</mat-card-title>
+            <mat-card-subtitle *ngIf="strategy.isMostEfficient">Más Eficiente</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Vueltas: {{ strategy.totalLaps }}</p>
+            <p>Rendimiento: {{ strategy.averagePerformance}}</p>
+            <p>Consumo: {{ strategy.totalFuelConsumption}} litros</p>
+            <p><strong>Neumáticos:</strong></p>
+            <mat-list>
+                <mat-list-item *ngFor="let stint of strategy.stints">
+                    <span>Segmento: Llantas {{ stint.tireType }}, {{ stint.laps }} vueltas, {{ stint.fuelConsumption }} litros</span>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+
+</div>
